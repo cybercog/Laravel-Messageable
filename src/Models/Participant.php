@@ -40,6 +40,6 @@ class Participant extends Model
      */
     public function model()
     {
-        return $this->belongsTo($this->participant_type, 'participant_id');
+        return $this->morphTo('participant');
     }
 }

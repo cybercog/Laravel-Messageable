@@ -45,7 +45,7 @@ class Message extends Model
      */
     public function creator()
     {
-        return $this->belongsTo($this->creator_type);
+        return $this->morphTo('creator');
     }
 
     /**
