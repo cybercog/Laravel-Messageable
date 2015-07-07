@@ -18,7 +18,7 @@ And then include the service provider within `app/config/app.php`.
 
 ```php
 'providers' => [
-    'DraperStudio\Messageable\MessageableServiceProvider'
+    DraperStudio\Messageable\MessageableServiceProvider::class
 ];
 ```
 
@@ -35,12 +35,13 @@ php artisan vendor:publish && php artisan migrate
 
 namespace App;
 
-use DraperStudio\Messageable\Traits\Messageable;
+use DraperStudio\Messageable\Traits\HasMessage;
+use DraperStudio\Messageable\Traits\HasMessageInterface;
 use Illuminate\Database\Eloquent\Model;
 
 class User extends Model
 {
-    use Messageable;
+    use HasMessage;
 }
 
 ```

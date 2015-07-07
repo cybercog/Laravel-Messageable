@@ -7,9 +7,9 @@ use DraperStudio\Messageable\Models\Participant;
 use DraperStudio\Messageable\Models\Thread;
 
 /**
- * Class Messageable.
+ * Class HasMessage.
  */
-trait Messageable
+trait HasMessage
 {
     /**
      * @return mixed

@@ -66,7 +66,7 @@ class Thread extends Model
      */
     public static function getAllLatest()
     {
-        return self::latest('updated_at');
+        return static::latest('updated_at');
     }
 
     /**

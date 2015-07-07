@@ -10,7 +10,7 @@ use Illuminate\Support\ServiceProvider;
 class MessageableServiceProvider extends ServiceProvider
 {
     /**
-     * Bootstrap the application services.
+     * Bootstrap any application services.
      */
     public function boot()
     {
@@ -20,7 +20,7 @@ class MessageableServiceProvider extends ServiceProvider
     }
 
     /**
-     * Register the application services.
+     * Register any application services.
      */
     public function register()
     {
