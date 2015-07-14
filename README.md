@@ -1,9 +1,5 @@
 # Laravel Messageable
 
-Use At Your Own Risk - Not Maintained!
-
------
-
 ## Installation
 
 First, pull in the package through Composer.
