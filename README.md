@@ -14,14 +14,14 @@ And then include the service provider within `app/config/app.php`.
 
 ```php
 'providers' => [
-    DraperStudio\Messageable\MessageableServiceProvider::class
+    DraperStudio\Messageable\ServiceProvider::class
 ];
 ```
 
 At last you need to publish and run the migration.
 
 ```
-php artisan vendor:publish --provider="DraperStudio\Messagable\MessagableServiceProvider" && php artisan migrate
+php artisan vendor:publish --provider="DraperStudio\Messagable\ServiceProvider" && php artisan migrate
 ```
 
 ## Setup a Model
@@ -31,15 +31,14 @@ php artisan vendor:publish --provider="DraperStudio\Messagable\MessagableService
 
 namespace App;
 
-use DraperStudio\Messageable\Traits\HasMessage;
-use DraperStudio\Messageable\Traits\HasMessageInterface;
+use DraperStudio\Messageable\Contracts\Messageable;
+use DraperStudio\Messageable\Traits\Messageable as MessageableTrait;
 use Illuminate\Database\Eloquent\Model;
 
-class User extends Model
+class User extends Model implements Messageable
 {
-    use HasMessage;
+    use MessageableTrait;
 }
-
 ```
 
 ## Examples

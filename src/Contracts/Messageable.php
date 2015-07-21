@@ -1,19 +1,19 @@
 <?php
 
-namespace DraperStudio\Messageable\Traits;
+namespace DraperStudio\Messageable\Contracts;
 
 /**
- * Interface HasMessageInterface.
+ * Interface Messageable.
  */
-interface HasMessageInterface
+interface Messageable
 {
     /**
-     * @return mixed
+     * @return \Illuminate\Database\Eloquent\Relations\MorphMany
      */
     public function messages();
 
     /**
-     * @return mixed
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
     public function threads();
 

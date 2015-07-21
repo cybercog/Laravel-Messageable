@@ -7,12 +7,12 @@ use DraperStudio\Messageable\Models\Participant;
 use DraperStudio\Messageable\Models\Thread;
 
 /**
- * Class HasMessage.
+ * Class Messageable.
  */
-trait HasMessage
+trait Messageable
 {
     /**
-     * @return mixed
+     * @return \Illuminate\Database\Eloquent\Relations\MorphMany
      */
     public function messages()
     {
@@ -20,13 +20,11 @@ trait HasMessage
     }
 
     /**
-     * @return mixed
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
     public function threads()
     {
-        return $this->belongsToMany(
-            Thread::class, 'participants', 'participant_id'
-        );
+        return $this->belongsToMany(Thread::class, 'participants', 'participant_id');
     }
 
     /**

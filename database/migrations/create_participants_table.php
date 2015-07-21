@@ -3,16 +3,16 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
+/**
+ * Class CreateParticipantsTable.
+ */
 class CreateParticipantsTable extends Migration
 {
-    /**
-     * Run the migrations.
-     */
     public function up()
     {
         Schema::create('participants', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('thread_id')->unsigned();
+            $table->integer('thread_id')->unsigned()->index();
             $table->morphs('participant');
             $table->timestamp('last_read')->nullable();
             $table->timestamps();
@@ -20,11 +20,8 @@ class CreateParticipantsTable extends Migration
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
     public function down()
     {
-        Schema::drop('participants');
+        Schema::dropIfExists('participants');
     }
 }

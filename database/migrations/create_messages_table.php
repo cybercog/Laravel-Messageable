@@ -3,16 +3,16 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
+/**
+ * Class CreateMessagesTable.
+ */
 class CreateMessagesTable extends Migration
 {
-    /**
-     * Run the migrations.
-     */
     public function up()
     {
         Schema::create('messages', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('thread_id')->unsigned();
+            $table->integer('thread_id')->unsigned()->index();
             $table->morphs('creator');
             $table->text('body');
             $table->timestamps();
@@ -20,11 +20,8 @@ class CreateMessagesTable extends Migration
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
     public function down()
     {
-        Schema::drop('messages');
+        Schema::dropIfExists('messages');
     }
 }

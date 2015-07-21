@@ -2,16 +2,13 @@
 
 namespace DraperStudio\Messageable;
 
-use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\ServiceProvider as IlluminateProvider;
 
 /**
- * Class MessageableServiceProvider.
+ * Class ServiceProvider.
  */
-class MessageableServiceProvider extends ServiceProvider
+class ServiceProvider extends IlluminateProvider
 {
-    /**
-     * Bootstrap any application services.
-     */
     public function boot()
     {
         $fromPath = __DIR__.'/../database/migrations/';
@@ -24,9 +21,6 @@ class MessageableServiceProvider extends ServiceProvider
         ], 'migrations');
     }
 
-    /**
-     * Register any application services.
-     */
     public function register()
     {
         //
